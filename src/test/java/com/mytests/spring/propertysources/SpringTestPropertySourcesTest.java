@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 @TestPropertySource(locations = {"classpath:test_messages.properties"}, properties = {"local.prop1 = l.val1","local.prop2 = l.val2", "fm.prop1 = prop1 from testProperties"})
-class SpringPropertySourcesApplicationTests {
+class SpringTestPropertySourcesTest {
 
     @Value("${tm.prop1}")
     String attr1;
@@ -25,7 +25,7 @@ class SpringPropertySourcesApplicationTests {
     @Test
     void testProperties() {
         String rez = b1.beanMethod1(attr1,attr2, attr3);
-        assertEquals(rez,"test arguments: tm_value1 l.val1 l.val2");
+        assertEquals(rez,"test arguments: tm_value1; l.val1; l.val2;");
     }
 
     @Test
