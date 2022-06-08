@@ -31,6 +31,7 @@ class SpringTestPropertySourcesTest {
     @Test
     void testBean1() {
         assertEquals(b1.getAttr1(),"prop1 from testProperties");
-        assertEquals(b1.getAttr2(),"xm_value1");
+        assertEquals(b1.getAttr2(),"xml_value1");
+        assertEquals(b1.getAttr3(),"property from second_messages");
     }
 }

@@ -17,6 +17,7 @@ public class MyConfProps {
     String prop4;
     String prop5;
     String prop6;
+    String propsLocation;
 
     public String getProp3() {
         return prop3;
@@ -48,5 +49,13 @@ public class MyConfProps {
 
     public void setProp6(String prop6) {
         this.prop6 = prop6;
+    }
+
+    public String getPropsLocation() {
+        return propsLocation;
+    }
+
+    public void setPropsLocation(String propsLocation) {
+        this.propsLocation = propsLocation;
     }
 }

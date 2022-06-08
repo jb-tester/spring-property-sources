@@ -12,16 +12,17 @@ import org.springframework.context.annotation.PropertySource;
  * *
  */
 @Configuration
-
+@PropertySource({"classpath:first_messages.properties", "classpath:xml_messages.xml", "classpath:${local.props-location}"})
 public class MyConfig {
     @Value("${fm.prop1}")
     String attr1;
     @Value("${xm.prop1}")
     String attr2;
-
+    @Value("${sm.prop1}")
+    String attr3;
     @Bean
     public Bean1 b1() {
-        return new Bean1(attr1,attr2);
+        return new Bean1(attr1,attr2,attr3);
     }
 
 }
