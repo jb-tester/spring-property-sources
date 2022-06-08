@@ -1,1 +1,1 @@
-# Properties and placeholders in @PropertySource, @TestPropertySource, @SpringBootTest
+# Properties and placeholders in @PropertySource, @TestPropertySource, @SpringBootTest, @DynamicPropertSource
