@@ -16,13 +16,13 @@ import org.springframework.context.annotation.PropertySource;
                  "classpath:xml_messages.xml",
                  "classpath:${local.props-location}"})
 public class MyConfig {
-    @Value("${fm.prop1}")
+    @Value("${fm.prop1}")  // from first_messages.properties
     String attr1;
-    @Value("${xm.prop1}")
+    @Value("${xm.prop1}") // from xml_messages.xml
     String attr2;
-    @Value("${sm.prop1}")
+    @Value("${sm.prop1}") // from ${local.props-location} (second_messages.properties)
     String attr3;
-    @Value("${spring.application.name}")
+    @Value("${spring.application.name}") // from application.properties
     @Bean
     public Bean1 b1() {
         return new Bean1(attr1,attr2,attr3);
