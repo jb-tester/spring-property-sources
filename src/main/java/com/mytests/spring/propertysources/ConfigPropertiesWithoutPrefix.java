@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
-@PropertySource("file_in_src_resources_root.properties")
+@PropertySource("file_in_src_resources_root.properties") // no warnings should be reported, resolve should work
 public class ConfigPropertiesWithoutPrefix {
 
 
