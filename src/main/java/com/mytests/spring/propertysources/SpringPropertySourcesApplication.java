@@ -22,5 +22,6 @@ public class SpringPropertySourcesApplication implements CommandLineRunner {
         Bean1 b1 = ctx.getBean(Bean1.class);
         System.out.println(b1.getAttr1());
         System.out.println(b1.getAttr2());
+        System.out.println(ctx.getBean("strBean", String.class));
     }
 }

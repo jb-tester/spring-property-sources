@@ -23,6 +23,7 @@ public class DynamicPropertySourcesTest {
     static void messProperties(DynamicPropertyRegistry registry) {
         registry.add("dynamic.props.test.prop1", provider::firstProperty);
         registry.add("dynamic.props.test.prop2", provider::secondProperty);
+
     }
     @Value("${dynamic.props.test.prop1}")
     String mess1;
