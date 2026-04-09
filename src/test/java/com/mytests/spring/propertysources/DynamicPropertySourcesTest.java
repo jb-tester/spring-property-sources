@@ -32,11 +32,11 @@ public class DynamicPropertySourcesTest {
 
     @Test
     public void testMess1(){
-        assertEquals(mess1,"hello");
+        assertEquals("hello", mess1);
     }
     @Test
     public void testMess2(){
-        assertEquals(mess2,"bye");
+        assertEquals("bye", mess2);
     }
 
     private static class MyPropertiesProvider {

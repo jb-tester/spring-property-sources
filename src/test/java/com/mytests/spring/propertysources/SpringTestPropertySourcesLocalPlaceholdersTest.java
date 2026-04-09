@@ -10,14 +10,14 @@ import org.springframework.test.context.TestPropertySource;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
-@TestPropertySource(properties = {"local.prop5 = local prop5","local.prop6 = placeholders: ${local.prop3},${local.prop4},${local.prop5}","local.prop7 = ${foobar}"})
-class SpringTestPropertySourcesPlaceholdersTest {
+@TestPropertySource(properties = {"here.prop1 = foo", "here.prop2 = ${here.prop1}bar", "here.prop3 = ${here.prop2}boo"})
+class SpringTestPropertySourcesLocalPlaceholdersTest {
 
-    @Value("${local.prop5}")
+    @Value("${here.prop1}")
     String attr1;
-    @Value("${local.prop6}")
+    @Value("${here.prop2}")
     String attr2;
-    @Value("${local.prop7}")
+    @Value("${here.prop3}")
     String attr3;
 
     @Autowired Bean1 b1;
@@ -25,7 +25,7 @@ class SpringTestPropertySourcesPlaceholdersTest {
     @Test
     void testProperties() {
         String rez = b1.beanMethod1(attr1,attr2, attr3);
-        assertEquals("test arguments: local prop5; placeholders: local_prop3 from application.properties,local_prop4 from @PropertySource-defined properties,local prop5; barr;", rez);
+        assertEquals("test arguments: foo; foobar; foobarboo;", rez);
     }
 
 
